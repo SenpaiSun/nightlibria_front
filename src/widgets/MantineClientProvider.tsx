@@ -5,5 +5,5 @@ import '@mantine/core/styles.css';
 import React from 'react';
 
 export const MantineClientProvider = ({ children }: { children: React.ReactNode }) => {
-  return <MantineProvider theme={DEFAULT_THEME}>{children}</MantineProvider>;
+  return <MantineProvider defaultColorScheme='dark' theme={DEFAULT_THEME}>{children}</MantineProvider>;
 };

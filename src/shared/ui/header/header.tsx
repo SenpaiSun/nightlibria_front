@@ -1,13 +1,16 @@
 'use client'
 import { ActionIcon } from '@mantine/core'
 import Image from 'next/image'
-import { IconMoon, IconSun } from '@tabler/icons-react'
 import { useMantineColorScheme } from '@mantine/core'
-import Logo from '../../image/for-header-logo/logo.svg'
 import React, { useState, useEffect } from 'react'
+import { HeaderLink } from './header-link/header-link'
+import { HeaderProps } from './types'
+import clsx from 'clsx'
+import { useRouter } from 'next/navigation'
 
-export const Header: React.FC = () => {
+export const Header: React.FC<HeaderProps> = ({ headerLinksData, darkThemeIcon, lightThemeIcon, logo }) => {
   const { toggleColorScheme, colorScheme } = useMantineColorScheme()
+  const router = useRouter()
 
   // Cостояние, чтобы отслеживать, был ли компонент смонтирован на клиенте
   const [mounted, setMounted] = useState(false)
@@ -23,12 +26,13 @@ export const Header: React.FC = () => {
   }
 
   return (
-    <header>
-      <ActionIcon variant='filled' color='gray' radius='lg' style={{ width: '50px', height: '100%' }} onClick={() => toggleColorScheme()}>
-        <Image src={Logo} alt='Custom Icon' width={100} />
+    <header className={clsx('flex justify-between p-2 align-center justify-center items-center', colorScheme === 'dark' ? 'bg-[#0a0a0a]' : 'bg-white border-b border-gray')}>
+      <ActionIcon variant='light' color='gray' radius='lg' style={{ width: '50px', height: '100%' }} onClick={() => router.push('/')}>
+        <Image src={logo} alt='Custom Icon' width={100} />
       </ActionIcon>
-      <ActionIcon variant='filled' color='gray' radius='lg' onClick={() => toggleColorScheme()}>
-        {colorScheme === 'dark' ? <IconMoon style={{ width: '100%', height: '100%' }} stroke={1.5} /> : <IconSun style={{ width: '100%', height: '100%' }} stroke={1.5} />}
+      <HeaderLink headerLinksData={headerLinksData} />
+      <ActionIcon variant='filled' color='gray' radius='lg' h={'max-content'} onClick={() => toggleColorScheme()}>
+        {colorScheme === 'dark' ? darkThemeIcon : lightThemeIcon}
       </ActionIcon>
     </header>
   )
