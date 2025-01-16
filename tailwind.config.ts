@@ -13,6 +13,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      boxShadow: {
+        'slider': 'rgba(0, 0, 0, 0.35) 0px 4px 15px',
+      }
     },
   },
   plugins: [],
