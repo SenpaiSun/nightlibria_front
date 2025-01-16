@@ -26,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({ headerLinksData, darkThemeIcon, 
   }
 
   return (
-    <header className={clsx('flex justify-between p-2 align-center justify-center items-center', colorScheme === 'dark' ? 'bg-[#0a0a0a]' : 'bg-white border-b border-gray')}>
+    <header className={clsx('flex justify-between p-2 align-center justify-center items-center', colorScheme === 'dark' ? 'bg-[#0a0a0a] border-b border-black' : 'bg-white border-b border-gray')}>
       <ActionIcon variant='light' color='gray' radius='lg' style={{ width: '50px', height: '100%' }} onClick={() => router.push('/')}>
         <Image src={logo} alt='Custom Icon' width={100} />
       </ActionIcon>

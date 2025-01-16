@@ -7,12 +7,12 @@ import { CarouselProps } from './types'
 export const CarouselComponent: React.FC<CarouselProps> = ({children}) => {
     const { colorScheme } = useMantineColorScheme()
   return (
-    <Container>
+    <Container className='m-0'>
       <Carousel
         withIndicators
         draggable={true}
         height={'max-content'}
-        slideSize='25%'
+        slideSize={{ base: '100%', xs: '50%', sm: '33.33333333%', md: '20%' }}
         slideGap='0px'
         styles={{
           indicators: {
@@ -22,10 +22,10 @@ export const CarouselComponent: React.FC<CarouselProps> = ({children}) => {
             backgroundColor: colorScheme === 'dark' ? 'white' : 'black',
           },
         }}
-        style={{ padding: '30px 40px 20px' }}
+        style={{ padding: '30px 40px 20px', width: '100%' }}
         loop
-        align='start'
-        slidesToScroll={4}
+        align='center'
+        slidesToScroll="auto"
       >
         {children}
       </Carousel>
