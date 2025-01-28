@@ -1,7 +1,7 @@
 'use client'
 import { Carousel } from '@mantine/carousel'
 import '@mantine/carousel/styles.css'
-import { Flex, NavLink, Title, useMantineColorScheme } from '@mantine/core'
+import { Flex, NavLink, useMantineColorScheme } from '@mantine/core'
 import { CarouselProps } from './types'
 import {IconArrowBarRight} from '@tabler/icons-react'
 
