@@ -1,15 +1,24 @@
 'use client'
 import { Carousel } from '@mantine/carousel'
 import '@mantine/carousel/styles.css'
-import { Flex, Title, useMantineColorScheme } from '@mantine/core'
+import { Flex, NavLink, Title, useMantineColorScheme } from '@mantine/core'
 import { CarouselProps } from './types'
-import { DEFAULT_THEME } from '@mantine/core'
+import {IconArrowBarRight} from '@tabler/icons-react'
 
 export const CarouselComponent: React.FC<CarouselProps> = ({ children, title }) => {
   const { colorScheme } = useMantineColorScheme()
   return (
     <Flex m={0} pt={'20px'} ml={'15vw'} mr={'15vw'} direction={'column'} align={'start'}>
-      <Title c={colorScheme === 'dark' ? 'white' : 'black'} td={'underline'} pl={'2vw'} pr={'2vw'} order={1}>{title}</Title>
+       <NavLink
+       w={'max-content'}
+      href="#required-for-focus"
+      label={title}
+      description={`Нажмите, чтобы перейти`}
+      rightSection={<IconArrowBarRight/>}
+      // onClick={() => setActive(index)}
+      color="gray"
+      variant="subtle"
+    />
       <Carousel
         withIndicators
         draggable={true}
