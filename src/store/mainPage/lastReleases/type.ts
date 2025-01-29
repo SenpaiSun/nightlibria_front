@@ -1,4 +1,4 @@
-interface Image {
+interface ImageProps {
   src: string
   thumbnail: string
   optimized?: {
@@ -7,7 +7,7 @@ interface Image {
   }
 }
 
-interface Genre {
+interface GenreProps {
   id: number
   name: string
   image: {
@@ -21,35 +21,35 @@ interface Genre {
   total_releases: number
 }
 
-interface Name {
+interface NameProps {
   main: string
   english: string
   alternative: string | null
 }
 
-interface Type {
+interface TypeProps {
   value: string
   description: string
 }
 
-interface Season {
+interface SeasonProps {
   value: string
   description: string
 }
 
-interface AgeRating {
+interface AgeRatingProps {
   value: string
   label: string
   is_adult: boolean
   description: string
 }
 
-interface PublishDay {
+interface PublishDayProps {
   value: number
   description: string
 }
 
-interface LatestEpisode {
+interface LatestEpisodeProps {
   id: string
   name: string
   ordinal: number
@@ -61,7 +61,7 @@ interface LatestEpisode {
     stop: number
     start: number
   }
-  preview: Image
+  preview: ImageProps
   hls_480: string
   hls_720: string
   hls_1080: string
@@ -75,18 +75,18 @@ interface LatestEpisode {
 
 export interface lastRealese {
   id: number
-  type: Type
+  type: TypeProps
   year: number
-  name: Name
+  name: NameProps
   alias: string
-  season: Season
-  poster: Image
+  season: SeasonProps
+  poster: ImageProps
   fresh_at: string
   created_at: string
   updated_at: string
   is_ongoing: boolean
-  age_rating: AgeRating
-  publish_day: PublishDay
+  age_rating: AgeRatingProps
+  publish_day: PublishDayProps
   description: string
   notification: string | null
   episodes_total: number
@@ -97,8 +97,8 @@ export interface lastRealese {
   is_blocked_by_copyrights: boolean
   added_in_users_favorites: number
   average_duration_of_episode: number
-  genres: Genre[]
-  latest_episode: LatestEpisode
+  genres: GenreProps[]
+  latest_episode: LatestEpisodeProps
 }
 
 export interface lastReleaseProps {

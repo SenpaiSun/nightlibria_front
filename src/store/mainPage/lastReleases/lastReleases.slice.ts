@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { lastReleaseProps } from '../type'
+import { lastReleaseProps } from './type'
 
 const initialState: lastReleaseProps = {
   lastRelease: [],
@@ -10,3 +10,6 @@ export const lastReleaseSlice = createSlice({
   initialState,
   reducers: {},
 })
+
+export const lastReleasesActions = lastReleaseSlice.actions
+export const lastReleasesReducer = lastReleaseSlice.reducer

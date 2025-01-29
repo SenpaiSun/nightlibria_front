@@ -1,5 +1,6 @@
 import { CarouselComponent } from '@/src/shared/ui/carousel/carousel'
 import { CarouselSlide } from '@/src/shared/ui/carousel/carousel-slide/carouselSlide'
+import { lastReleaseProps } from '@/src/store/mainPage/lastReleases/type'
 import React from 'react'
 
 export const MainPage: React.FC = () => {
@@ -15,7 +16,7 @@ export const MainPage: React.FC = () => {
   )
 }
 
-export const lastRelease = [
+export const lastRelease: lastReleaseProps[] = [
   {
     id: 9873,
     type: {

@@ -6,6 +6,7 @@ import React from 'react'
 import clsx from 'clsx'
 import { ReleaseInfo } from './releasesInfo/ReleasesInfo'
 import { GenresInfo } from './genresInfo/GenresInfo'
+import { lastRealese } from '@/src/store/mainPage/lastReleases/type'
 
 interface CarouselSlideProps {
   data: any
@@ -24,7 +25,7 @@ export const CarouselSlide: React.FC<CarouselSlideProps> = ({ data, path }) => {
   }
   return (
     <>
-      {data.map((item: any, index: number) => (
+      {data.map((item: lastRealese, index: number) => (
         <Carousel.Slide key={index} style={{ width: 'max-content', height: 'max-content', minWidth: 'max-content', minHeight: 'max-content' }}>
           <Container className='group' style={{ paddingBottom: '17px', paddingTop: '12px', height: 'max-content', width: 'max-content' }}>
             <Flex className={clsx(`rounded-xl shadow-slider`)} pos={'relative'} w={'180px'} h={'257px'} mah={'257px'} maw={'180px'} style={{ overflow: 'hidden' }}>

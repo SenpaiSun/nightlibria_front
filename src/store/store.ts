@@ -1,7 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { lastReleasesReducer } from "./mainPage/lastReleases/lastReleases.slice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    lastReleases: lastReleasesReducer
+  },
 })
 
 export type RootState = ReturnType<typeof store.getState>
